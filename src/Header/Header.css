@@ -1,0 +1,48 @@
+.Header{
+    width: 100%;
+    background: var(--c-dark);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+
+}
+
+.Header-Logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.Header-Logo h1{
+    color: var(--c-primary)
+}
+
+
+
+.Header-Buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Header-Buttons li{
+    padding-inline: 20px;
+    padding-block: 10px;
+    list-style: none;
+    color:var(--c-primary)
+    
+}
+.Header-Buttons li:last-child{
+    border: 1px solid var(--c-primary);
+    border-radius: 30px !important;
+    
+}
+.Header-Buttons li:hover{
+    color: var(--c-secondary);
+    cursor: pointer;
+    border-color: var(--c-secondary);
+
+}
