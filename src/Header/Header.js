@@ -7,7 +7,10 @@ function Header() {
         <h1>MyToDo</h1>
       </div>
       <ul className='Header-Buttons'>
-        <li>+ Add New Todo</li>
+        <li>
+            <input className='todo-text' type='text' placeholder='Todo text'/>
+        </li>
+        <li>+ Add Todo</li>
       </ul>
     </div>
   );

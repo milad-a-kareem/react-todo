@@ -8,6 +8,10 @@ function List() {
             <input type='checkbox'></input>
             <p>Cleanning the room</p>
         </li>
+        <li>
+            <input type='checkbox'></input>
+            <p>Go to school</p>
+        </li>
       </ul>
     </div>
   );

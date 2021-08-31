@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px;
+    position: fixed;
 
 }
 
@@ -26,16 +27,19 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
 }
 
 .Header-Buttons li{
-    padding-inline: 20px;
-    padding-block: 10px;
+    
     list-style: none;
-    color:var(--c-primary)
+    color:var(--c-primary);
+    
     
 }
 .Header-Buttons li:last-child{
+    padding-inline: 20px;
+    padding-block: 10px;
     border: 1px solid var(--c-primary);
     border-radius: 30px !important;
     
@@ -45,4 +49,11 @@
     cursor: pointer;
     border-color: var(--c-secondary);
 
+}
+
+
+input.todo-text{
+    width: 300px !important;
+    padding: 20px;
+    border-radius: 20px;
 }
