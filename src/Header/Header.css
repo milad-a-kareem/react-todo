@@ -52,8 +52,10 @@
 }
 
 
-input.todo-text{
+.todo-text{
     width: 300px !important;
     padding: 20px;
+    padding-block: 13px;
     border-radius: 20px;
+    background: var(--c-light);
 }

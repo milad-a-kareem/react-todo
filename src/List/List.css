@@ -22,7 +22,37 @@
     border-radius: 20px;
 }
 
-input{
+
+
+.flex-grow{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.flex-grow button{
+    border: 1px solid var(--c-dark);
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--c-dark);
+    background: var(--medium);
+
+}
+.flex-grow button:hover{
+    cursor: pointer;
+    background: var(--c-primary);
+
+}
+
+
+
+.done{
     width: 30px;
     height: 30px;
+    accent-color: var(--c-secondary);
+
 }
+
+
