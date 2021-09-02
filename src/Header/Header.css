@@ -7,6 +7,8 @@
     justify-content: space-between;
     padding: 20px;
     position: fixed;
+    z-index: 10;
+    box-sizing: border-box;
 
 }
 
@@ -29,6 +31,10 @@
     justify-content: space-between;
     gap: 20px;
 }
+
+
+
+/* 00000000000000000000 */
 
 .Header-Buttons li{
     
@@ -58,4 +64,59 @@
     padding-block: 13px;
     border-radius: 20px;
     background: var(--c-light);
+}
+
+.mobile-nav-icon{
+    width: 30px;
+    display: none;
+}
+
+@media only  screen and (max-width: 750px){
+
+    .Header-Buttons .open{
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        left:0;
+        top:0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly !important;
+        padding: 50px;
+        background: rgba(0,0,0,0.77);
+    }
+    
+    .open li{
+    
+        list-style: none;
+        color:var(--c-light);
+        
+    }
+    
+    .open li:last-child{
+        padding-inline: 20px;
+        padding-block: 10px;
+        border: 1px solid var(--c-light);
+        border-radius: 30px !important;
+        background: var(--c-primary);
+        
+    }
+    .open li:last-child:hover{
+        color: var(--c-light);
+        cursor: pointer;
+        background: var(--c-secondary);
+    
+    }
+
+
+    .mobile-nav-icon{
+        display: block;
+    }
+    .mobile-nav-icon:hover{
+        cursor: pointer;
+    }
+
+    .Header-Buttons{
+        display: none;
+    }
 }
