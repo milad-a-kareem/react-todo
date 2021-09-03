@@ -51,7 +51,7 @@
 .done{
     min-width: 30px;
     min-height: 30px;
-    accent-color: var(--c-medium);
+    accent-color: var(--c-primary);
 
 }
 

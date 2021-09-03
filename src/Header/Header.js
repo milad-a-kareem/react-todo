@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Header.css';
+import menuIcon from '../images/list.png'
 
 function Header(props) {
   const [mobMenuState, mobMenuChangeState] = useState(false)
@@ -36,7 +37,7 @@ function Header(props) {
         </li>
         <li onClick={(e)=>{e.stopPropagation(); add()}}>+ Add Todo</li>
       </ul>
-      <img className='mobile-nav-icon' src='/images/list.png' alt='menu' onClick={openMenu}/>
+      <img className='mobile-nav-icon' src={menuIcon} alt='menu' onClick={openMenu}/>
     </div>
   );
 }
