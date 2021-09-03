@@ -13,7 +13,7 @@ function List(props) {
 
           return (
             <li key={todo.id}>
-              <input className='done' type='checkbox' defaultChecked={todo.done} onChange={()=>{props.change(todo.id)}}></input>
+              <input className='done' type='checkbox' defaultChecked={todo.done} onChange={(e)=>{props.change(todo.id,e.target.checked)}}></input>
               
               {p}
               <div className='flex-grow'>

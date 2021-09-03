@@ -4,7 +4,8 @@ import Header from './Header/Header';
 import List from './List/List';
 
 function App() {
-  // const todos = window.localStorage.getItem('todos')
+  let myStorage = window.localStorage
+  let todos = myStorage.getItem('todos')
   const [todoState, setTodoState] = useState([
     {
       id: 1,
@@ -13,30 +14,35 @@ function App() {
     },
     {
       id: 2,
-      text: 'Go out',
+      text: 'Cooking Biryani',
       done: false
     },
   ])
+
+  
 
   const addHandler = (todoText)=>{
     if(todoText.length>0){
       let newTodos = [...todoState]
       newTodos.unshift({id: Math.floor(Math.random()*1000), text: todoText, done:false})
-      console.log(newTodos,Math.floor(Math.random()*1000))
       setTodoState(newTodos)
+      myStorage.setItem('todos', JSON.stringify(newTodos))
+      todos = myStorage.getItem('todos')
     }
   }
 
   const delHandler = (id)=>{
     const newTodos  = todoState.filter( todo => { return todo.id !== id})
     setTodoState(newTodos)
+    myStorage.setItem('todos', JSON.stringify(newTodos))
+    todos = myStorage.getItem('todos')
   }
-  const changeHandler = (id)=>{
+  const changeHandler = (id , s)=>{
     let newTodos  = [...todoState]
     const a = new Promise((resolve, reject)=>{
       newTodos.forEach((todo,i) =>{
         if(todo.id === id){
-          newTodos[i].done = !newTodos[i].done
+          newTodos[i].done = s
           resolve(true)
         }
       })
@@ -45,11 +51,21 @@ function App() {
     a.then(res=>{
       if (res){
         setTodoState(newTodos)
+        myStorage.setItem('todos', JSON.stringify(newTodos))
+        todos = myStorage.getItem('todos')
       }
     })
 
   }
 
+  if(todos){
+    setTimeout(()=>{
+      todos = myStorage.getItem('todos')
+      JSON.parse(todos) !== todoState ? setTodoState(JSON.parse(todos)):
+      console.log(JSON.parse(todos))
+    }, 100)
+  }
+  
   return (
     <div className="App">
       <Header add={addHandler}/>
