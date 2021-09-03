@@ -1,14 +1,13 @@
+import React, { useState } from 'react'
 import './Header.css';
 
 function Header(props) {
-  let text = ''
-  const handleChange = (event) => {
-    text = event.target.value 
-  }
+  const [mobMenuState, mobMenuChangeState] = useState(false)
 
   const add = () => {
-    props.add(text)
-    document.querySelector('input').value = ''
+    const inp = document.querySelector('input')
+    props.add(inp.value)
+    inp.value = ''
   }
 
   const keyPress = e =>{
@@ -16,16 +15,12 @@ function Header(props) {
   }
 
   const openMenu = e => {
-    const headerButtons = document.querySelector('ul')
-    // headerButtons.classList.remove('Header-Buttons')
-    headerButtons.classList.add('open')
+    mobMenuChangeState(true)
 
   }
 
   const closeMenu = e =>{
-    const headerButtons = document.querySelector('ul')
-    headerButtons.classList.add('Header-Buttons')
-    headerButtons.classList.remove('open')
+    mobMenuChangeState(false)
   }
   
 
@@ -34,10 +29,10 @@ function Header(props) {
       <div className='Header-Logo'>
         <h1>MyToDo</h1>
       </div>
-      <ul className='Header-Buttons' onClick={closeMenu}>
+      <ul className={!mobMenuState ? 'Header-Buttons' : 'open'} onClick={closeMenu}>
         <li onClick={(e)=>{e.stopPropagation()}}>
             <input onClick={(e)=>{e.stopPropagation()}} defaultValue=''
-             className='todo-text' type='text' placeholder='Todo text' onChange={handleChange} onKeyPress={(e) => keyPress(e)}/>
+             className='todo-text' type='text' placeholder='Todo text' onKeyPress={(e) => keyPress(e)}/>
         </li>
         <li onClick={(e)=>{e.stopPropagation(); add()}}>+ Add Todo</li>
       </ul>

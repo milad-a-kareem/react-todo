@@ -5,9 +5,9 @@ function List(props) {
         {
           let p = <p></p>
           if(todo.done){
-            p = <p key={todo.id} style={{textDecorationLine: 'line-through', opacity:0.5}}>{todo.text}</p>
+            p = <p key={todo.id} style={{textDecorationLine: 'line-through', opacity:0.5, textAlign:'start'}}>{todo.text}</p>
           }else{
-            p = <p key={todo.id} style={{textDecorationLine: 'none'}}>{todo.text}</p>
+            p = <p key={todo.id} style={{textDecorationLine: 'none', textAlign:'start'}}>{todo.text}</p>
           }
 
 

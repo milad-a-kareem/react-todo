@@ -73,7 +73,7 @@
 
 @media only  screen and (max-width: 750px){
 
-    .Header-Buttons .open{
+    .open{
         width: 100vw;
         height: 100vh;
         position: fixed;
@@ -87,7 +87,6 @@
     }
     
     .open li{
-    
         list-style: none;
         color:var(--c-light);
         
@@ -118,5 +117,10 @@
 
     .Header-Buttons{
         display: none;
+    }
+
+    .todo-text{
+        width: 100% !important;
+        margin-block-end: 20px;
     }
 }
