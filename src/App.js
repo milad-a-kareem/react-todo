@@ -7,16 +7,7 @@ function App() {
   let myStorage = window.localStorage
   let todos = myStorage.getItem('todos')
   const [todoState, setTodoState] = useState([
-    {
-      id: 1,
-      text: 'Playing Football',
-      done: true
-    },
-    {
-      id: 2,
-      text: 'Cooking Biryani',
-      done: false
-    },
+    
   ])
 
   
@@ -70,6 +61,7 @@ function App() {
     <div className="App">
       <Header add={addHandler}/>
       <List todos={todoState} delete={delHandler} change={changeHandler}/>
+      { todoState.length < 1 ? <h1 style={{color:'var(--c-dark)'}}>Todo List Is Empty, Add One!</h1> : null }
       
     </div>
   );
