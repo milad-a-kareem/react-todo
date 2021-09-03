@@ -61,7 +61,7 @@ function App() {
     <div className="App">
       <Header add={addHandler}/>
       <List todos={todoState} delete={delHandler} change={changeHandler}/>
-      { todoState.length < 1 ? <h1 style={{color:'var(--c-dark)'}}>Todo List Is Empty, Add One!</h1> : null }
+      { todoState.length < 1 ? <h2 style={{color:'var(--c-dark)'}}>Todo List Is Empty, Add One!</h2> : null }
       
     </div>
   );
